@@ -1,0 +1,131 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tip Calculator</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <header>
+            <h1>Tip Calculator</h1>
+            <p>Calculate tips and split the bill easily</p>
+        </header>
+
+        <div class="bill-container">
+
+            <div class="input-section">
+
+                <div class="form-group">
+                    <label for="billAmount">Bill Amount</label>
+
+                    <div class="input-box">
+                        <span>RS</span>
+
+                        <input type="number"
+                               id="billAmount"
+                               placeholder="Enter bill Amount"
+                               min="0"
+                               step="0.01">
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label>Tip Percentage</label>
+
+                    <div class="tip-button">
+
+                        <button type="button" class="active"
+                                onclick="selectTip(10)">10%</button>
+
+                        <button type="button"
+                                onclick="selectTip(15)">15%</button>
+
+                        <button type="button"
+                                onclick="selectTip(20)">20%</button>
+
+                    </div>
+
+                    <div class="input-box">
+
+                        <input type="number"
+                               id="customTip"
+                               placeholder="Enter custom percentage"
+                               min="0"
+                               step="0.01">
+
+                        <span>%</span>
+
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label for="people">Number of People</label>
+
+                    <div class="input-box">
+                        <span>👥</span>
+
+                        <input type="number"
+                               id="people"
+                               value="2"
+                               min="1"
+                               step="1">
+                    </div>
+                </div>
+
+
+                <button type="button"
+                        class="calculate-btn"
+                        onclick="calculateTip()">
+                    Calculate Tip
+                </button>
+
+            </div>
+
+
+            <div class="result-section">
+
+                <h2>Results</h2>
+
+                <div class="result-card">
+                    <p>Tip Amount</p>
+                    <h3 id="tipAmount">₹0.00</h3>
+                </div>
+
+                <div class="result-card">
+                    <p>Total Bill</p>
+                    <h3 id="totalBill">₹0.00</h3>
+                </div>
+
+                <div class="result-card">
+                    <p>Per Person</p>
+                    <h3 id="perPerson">₹0.00</h3>
+                </div>
+
+                <p id="error-message"></p>
+
+                <button type="button" onclick="resetCalculator()">
+                    Reset
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
